@@ -1,0 +1,84 @@
+Damon1, version 1.2.01, March 21, 2017, copyright Pythias Consulting, LLC, 
+Vancouver, Washington.
+
+Get Started
+-----------
+1.  Review the documentation on the Pythias website, www.pythiasconsulting.com.
+
+2.  Follow the instructions ("Download") for downloading Numpy and Python.  I
+recommend either the Anaconda or Enthought distributions.
+
+3.  Open the Python interpreter, called IDLE.
+
+4.  In the IDLE menu, go to File/Open Module.  Type:  damon1.templates.blank.  A 
+Python scripting window will pop up.  
+
+5.  Save damon1.templates.blank under a new name in a directory of your choice.
+
+6.  Hit the F5 key.  This will automatically load all the required modules 
+for running damon.
+
+7.  Start programming.  The template script gives basic information on the 
+commands you will need and how to access help.
+
+8.  When you get stuck, contact me through the Forum link on the website.
+
+Dependencies
+------------
+Python -- version 2.5 or higher, but not 3.0 or higher.
+
+Numpy -- the most recent version that is compatible with Python.
+
+matplotlib -- this is optional, for creating graphs and other visuals.
+
+It is recommended that you get either the free Anaconda distribution (Continuum
+Analytics) or the Enthought distribution.  Both include Python, Numpy, Matplotlib, 
+and a large suite of other numerical computing tools.  They ensure that all 
+relevant software packages are mutually compatible.  
+
+License
+-------
+Apache License, version 2.0
+
+Changes
+-------
+This version included a lot of new work with standard error estimation.
+
+Fixed bug in tools.median().
+
+In Damon.__init__(), used new tool functions to avoid numpy deprecation
+warnings.
+
+In Damon.__init__(), improved handling of floats in validchars.
+
+In tools.flag_invalid() extended formula to allow counts as proportions.
+
+In Damon.coord(), expanded the condcoord_ parameter to allow specification
+of the 'first' facet for which to calculate coordinates.
+
+In Damon.equate(), fixed bugs that messed up rescaling in anchored analysis 
+designs.
+
+In Damon.__init__(), forced index to be integer to get around deprecation
+waring raised by latest version of Numpy.
+
+In Damon.extract_valid(), added capacity to check row and column entities
+against a bank.
+
+In Damon.fin_est(), changed conversion back to ratio scale to remove
+requirement to have same original mean, sd.
+
+In Damon.base_est(), added functionality to refit parameter to allow 
+control of the degree of the fit. Removed functionality for standardizing
+base estimates.
+
+In Damon.base_ear(), changed how Damon is used to calculate standard
+errors, opting for a 2-dimensional log solution.
+
+In Damon.equate(), changed the SE and EAR aggregation formula to sum across
+log coordinates.  This causes a slight negative error estimation bias 
+in equate() relative to the RMSE type of aggregation used in summstat(). 
+Added a "group_se" option. 
+
+In Damon.summstat(), added a "group_se" option to control the aggregation
+of standard errors for measures.  
